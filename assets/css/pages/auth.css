@@ -11,7 +11,7 @@ body {
   height: 100%;
 }
 #auth #auth-left {
-  padding: 5rem 8rem;
+  padding: 5rem 5rem;
 }
 #auth #auth-left .auth-title {
   font-size: 2rem;

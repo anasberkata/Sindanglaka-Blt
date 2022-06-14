@@ -1,0 +1,12 @@
+.sidebar-wrapper .sidebar-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    display: none;
+}
+
+table.dataTable {
+    font-size: 10pt;
+}

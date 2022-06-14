@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['login'])) {
-    header("Location: view_admin/index.php");
+    header("Location: dashboard.php");
     exit;
 }
 ?>
@@ -32,7 +32,7 @@ if (isset($_SESSION['login'])) {
                         <a href="index.html"><img src="assets/images/logo/lg.png" height="75px"></a>
                     </div>
                     <h1 class="auth-title">Login</h1>
-                    <h6>SIPD Masyarakat Penerima BLT Desa Sindanglaka Cianjur</h6>
+                    <h6 class="mb-4">Sistem Informasi Data Masyarakat Penerima BLT Desa Sindanglaka</h6>
 
                     <?php if (isset($_GET["pesan"])) : ?>
                         <p class="alert alert-danger"><?= $_GET["pesan"]; ?></p>
