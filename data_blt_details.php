@@ -23,7 +23,7 @@ include "template_sidebar.php";
                 <h4>Data Penerima Bantuan Langsung Tunai</h4>
             </div>
             <div class="col-5">
-                <a href="logout.php" class="btn btn-success float-end">
+                <a href="logout.php" class="btn btn-success float-end" onclick="return confirm('Yakin akan keluar dari aplikasi?');">
                     <i class="icon dripicons-power"></i>
                     Logout
                 </a>
@@ -92,7 +92,15 @@ include "template_sidebar.php";
                                     <li class="list-group-item">
                                         <div class="row">
                                             <div class="col-4">Status DTKS</div>
-                                            <div class="col-8">: <?= $blt["status_dtks"]; ?></div>
+                                            <div class="col-8">:
+                                                <?php
+                                                if ($blt["status_dtks"] == 1) {
+                                                    echo "DTKS";
+                                                } else {
+                                                    echo "Non-DTKS";
+                                                }
+                                                ?>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>

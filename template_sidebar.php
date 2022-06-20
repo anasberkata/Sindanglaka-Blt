@@ -3,8 +3,14 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <!-- <a href="#"><img src="assets/images/logo/lg.png" alt="Logo" class="h-50"></a> -->
-                            <a href="#">SIDAMAR BLT DESA SINDANGLAKA</a>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="assets/images/logo/logodesa.png" alt="Logo">
+                                </div>
+                                <div class="col-8">
+                                    <a href="#">SIDAMAR BLT DESA SINDANGLAKA</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -63,7 +69,7 @@
                         <li class="sidebar-title">Button</li>
 
                         <li class="sidebar-item  ">
-                            <a href="logout.php" class='sidebar-link'>
+                            <a href="logout.php" class='sidebar-link' onclick="return confirm('Yakin akan keluar dari aplikasi?');">
                                 <i class="bi bi-box-arrow-left"></i>
                                 <span>Logout</span>
                             </a>

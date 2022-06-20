@@ -19,7 +19,7 @@ include "template_sidebar.php";
                 <h4>Data RT / RW</h4>
             </div>
             <div class="col">
-                <a href="logout.php" class="btn btn-success float-end">
+                <a href="logout.php" class="btn btn-success float-end" onclick="return confirm('Yakin akan keluar dari aplikasi?');">
                     <i class="icon dripicons-power"></i>
                     Logout
                 </a>
@@ -44,31 +44,34 @@ include "template_sidebar.php";
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table" id="table1">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Rukun Warga</th>
-                                    <th>Rukun Tetangga</th>
-                                    <th>Opsi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($rtrw as $r) : ?>
+                        <div class="table-responsive">
+                            <table class="table" id="table1">
+                                <thead>
                                     <tr>
-                                        <td><?= $i; ?></td>
-                                        <td><?= $r["rukun_warga"]; ?></td>
-                                        <td><?= $r["rukun_tetangga"]; ?></td>
-                                        <td>
-                                            <a href="data_rt_rw_edit.php?id=<?= $r["id_rtrw"] ?>" class="badge bg-warning">Edit</a> |
-                                            <a href="data_rt_rw_delete.php?id=<?= $r["id_rtrw"] ?>" class="badge bg-danger" onclick="return confirm('Yakin akan menghapus data RT / RW : <?= $r['rukun_tetangga'] . ' / ' . $r['rukun_warga']; ?> ?');">Hapus</a>
-                                        </td>
+                                        <th>No.</th>
+                                        <th>Rukun Warga</th>
+                                        <th>Rukun Tetangga</th>
+                                        <th>Opsi</th>
                                     </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($rtrw as $r) : ?>
+                                        <tr>
+                                            <td><?= $i; ?></td>
+                                            <td><?= $r["rukun_warga"]; ?></td>
+                                            <td><?= $r["rukun_tetangga"]; ?></td>
+                                            <td>
+                                                <a href="data_rt_rw_edit.php?id=<?= $r["id_rtrw"] ?>" class="badge bg-warning">Edit</a> |
+                                                <a href="data_rt_rw_delete.php?id=<?= $r["id_rtrw"] ?>" class="badge bg-danger" onclick="return confirm('Yakin akan menghapus data RT / RW : <?= $r['rukun_tetangga'] . ' / ' . $r['rukun_warga']; ?> ?');">Hapus</a>
+                                            </td>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -1,7 +1,18 @@
 <?php
+require "functions.php";
+$rtrw = query("SELECT * FROM data_rtrw");
+$users = query("SELECT * FROM users");
+$blt = query("SELECT * FROM data_blt_penerima");
+$penerima_blt = query("SELECT * FROM data_blt_penerima ORDER BY id_blt DESC LIMIT 3");
+
+$total_rtrw = count($rtrw);
+$total_petugas = count($users);
+$total_blt = count($blt);
+
 include "template_header.php";
 include "template_sidebar.php";
 ?>
+
 
 <div id="main">
     <header class="mb-3">
@@ -11,13 +22,23 @@ include "template_sidebar.php";
     </header>
 
     <div class="page-heading">
-        <h3>Dashboard</h3>
+        <div class="row">
+            <div class="col">
+                <h4>Dashboard</h4>
+            </div>
+            <div class="col">
+                <a href="logout.php" class="btn btn-success float-end" onclick="return confirm('Yakin akan keluar dari aplikasi?');">
+                    <i class="icon dripicons-power"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
     </div>
     <div class="page-content">
         <section class="row">
             <div class="col-12 col-lg-12">
                 <div class="row">
-                    <div class="col-6 col-lg-3 col-md-6">
+                    <div class="col-6 col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -27,14 +48,14 @@ include "template_sidebar.php";
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Profile Views</h6>
-                                        <h6 class="font-extrabold mb-0">112.000</h6>
+                                        <h6 class="text-muted font-semibold">RT / RW</h6>
+                                        <h6 class="font-extrabold mb-0"><?= $total_rtrw; ?> RT / RW</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 col-md-6">
+                    <div class="col-6 col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -44,31 +65,14 @@ include "template_sidebar.php";
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Followers</h6>
-                                        <h6 class="font-extrabold mb-0">183.000</h6>
+                                        <h6 class="text-muted font-semibold">Petugas</h6>
+                                        <h6 class="font-extrabold mb-0"><?= $total_petugas; ?> Petugas</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon green">
-                                            <i class="iconly-boldAdd-User"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Following</h6>
-                                        <h6 class="font-extrabold mb-0">80.000</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
+                    <div class="col-6 col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -78,8 +82,8 @@ include "template_sidebar.php";
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Saved Post</h6>
-                                        <h6 class="font-extrabold mb-0">112</h6>
+                                        <h6 class="text-muted font-semibold">Penerima BLT</h6>
+                                        <h6 class="font-extrabold mb-0"><?= $total_blt; ?> Orang</h6>
                                     </div>
                                 </div>
                             </div>
@@ -90,10 +94,41 @@ include "template_sidebar.php";
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Profile Visit</h4>
+                                <h4>Penerima Bantuan Langsung Tunai Terakhir</h4>
                             </div>
                             <div class="card-body">
-                                <div id="chart-profile-visit"></div>
+                                <table class="table small">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>NIK</th>
+                                            <th>Nama</th>
+                                            <th>Alamat</th>
+                                            <th>Status DTKS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $i = 1; ?>
+                                        <?php foreach ($penerima_blt as $b) : ?>
+                                            <tr>
+                                                <td><?= $i; ?></td>
+                                                <td><?= $b["no_nik"]; ?></td>
+                                                <td><?= $b["nama_lengkap"]; ?></td>
+                                                <td><?= $b["jalan"] . ", RT / RW. " . $b["rtrw"] . " Desa. " . $b["desa"] . " Kec. " . $b["kecamatan"] . " Kab. " . $b["kabupaten"] . ". " . $b["provinsi"] . " Kode Pos. " . $b["kode_pos"]; ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($b["status_dtks"] == 1) {
+                                                        echo "DTKS";
+                                                    } else {
+                                                        echo "Non-DTKS";
+                                                    }
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php $i++; ?>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

@@ -113,7 +113,7 @@ function status_pekerjaan_delete($id)
 }
 
 
-// STATUS PEKERJAAN
+// JABATAN
 function jabatan_add($data)
 {
     global $conn;
@@ -219,8 +219,8 @@ function petugas_delete($id)
 }
 
 
-// ------------------------------------------------------------- BLT ----------------------------------------------------------------
-// RT RW
+// ------------------------------------------------------ BLT ------------------------------------------------------
+// BLT
 function blt_add($data)
 {
     global $conn;

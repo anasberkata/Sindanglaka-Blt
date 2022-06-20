@@ -37,8 +37,8 @@ if (!isset($_SESSION['login'])) {
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/my-style.css">
+    <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/logo/lg.png" type="image/x-icon">
 </head>
 

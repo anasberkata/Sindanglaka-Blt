@@ -19,7 +19,7 @@ include "template_sidebar.php";
                 <h4>Data Status Pekerjaan</h4>
             </div>
             <div class="col">
-                <a href="logout.php" class="btn btn-success float-end">
+                <a href="logout.php" class="btn btn-success float-end" onclick="return confirm('Yakin akan keluar dari aplikasi?');">
                     <i class="icon dripicons-power"></i>
                     Logout
                 </a>
@@ -44,29 +44,31 @@ include "template_sidebar.php";
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table" id="table1">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Nama Pekerjaan</th>
-                                    <th>Opsi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($status_pekerjaan as $sp) : ?>
+                        <div class="table-responsive">
+                            <table class="table" id="table1">
+                                <thead>
                                     <tr>
-                                        <td><?= $i; ?></td>
-                                        <td><?= $sp["nama_pekerjaan"]; ?></td>
-                                        <td>
-                                            <a href="data_status_pekerjaan_edit.php?id=<?= $sp["id_status_pekerjaan"] ?>" class="badge bg-warning">Edit</a> |
-                                            <a href="data_status_pekerjaan_delete.php?id=<?= $sp["id_status_pekerjaan"] ?>" class="badge bg-danger" onclick="return confirm('Yakin akan menghapus data Pekerjaan : <?= $sp['nama_pekerjaan']; ?> ?');">Hapus</a>
-                                        </td>
+                                        <th>No.</th>
+                                        <th>Nama Pekerjaan</th>
+                                        <th>Opsi</th>
                                     </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($status_pekerjaan as $sp) : ?>
+                                        <tr>
+                                            <td><?= $i; ?></td>
+                                            <td><?= $sp["nama_pekerjaan"]; ?></td>
+                                            <td>
+                                                <a href="data_status_pekerjaan_edit.php?id=<?= $sp["id_status_pekerjaan"] ?>" class="badge bg-warning">Edit</a> |
+                                                <a href="data_status_pekerjaan_delete.php?id=<?= $sp["id_status_pekerjaan"] ?>" class="badge bg-danger" onclick="return confirm('Yakin akan menghapus data Pekerjaan : <?= $sp['nama_pekerjaan']; ?> ?');">Hapus</a>
+                                            </td>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

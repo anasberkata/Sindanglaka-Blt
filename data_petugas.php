@@ -19,7 +19,7 @@ include "template_sidebar.php";
                 <h4>Data Petugas</h4>
             </div>
             <div class="col">
-                <a href="logout.php" class="btn btn-success float-end">
+                <a href="logout.php" class="btn btn-success float-end" onclick="return confirm('Yakin akan keluar dari aplikasi?');">
                     <i class="icon dripicons-power"></i>
                     Logout
                 </a>
@@ -44,35 +44,37 @@ include "template_sidebar.php";
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table" id="table1">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Nama</th>
-                                    <th>E-Mail</th>
-                                    <th>Username</th>
-                                    <th>Jabatan</th>
-                                    <th>Opsi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($users as $u) : ?>
+                        <div class="table-responsive">
+                            <table class="table" id="table1">
+                                <thead>
                                     <tr>
-                                        <td><?= $i; ?></td>
-                                        <td><?= $u["nama"]; ?></td>
-                                        <td><?= $u["email"]; ?></td>
-                                        <td><?= $u["username"]; ?></td>
-                                        <td><?= $u["nama_jabatan"]; ?></td>
-                                        <td>
-                                            <a href="data_petugas_edit.php?id=<?= $u["id"] ?>" class="badge bg-warning mb-2">Edit</a> <br>
-                                            <a href="data_petugas_delete.php?id=<?= $u["id"] ?>" class="badge bg-danger" onclick="return confirm('Yakin akan menghapus data petugas : <?= $u['nama']; ?> ?');">Hapus</a>
-                                        </td>
+                                        <th>No.</th>
+                                        <th>Nama</th>
+                                        <th>E-Mail</th>
+                                        <th>Username</th>
+                                        <th>Jabatan</th>
+                                        <th>Opsi</th>
                                     </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($users as $u) : ?>
+                                        <tr>
+                                            <td><?= $i; ?></td>
+                                            <td><?= $u["nama"]; ?></td>
+                                            <td><?= $u["email"]; ?></td>
+                                            <td><?= $u["username"]; ?></td>
+                                            <td><?= $u["nama_jabatan"]; ?></td>
+                                            <td>
+                                                <a href="data_petugas_edit.php?id=<?= $u["id"] ?>" class="badge bg-warning mb-2">Edit</a> <br>
+                                                <a href="data_petugas_delete.php?id=<?= $u["id"] ?>" class="badge bg-danger" onclick="return confirm('Yakin akan menghapus data petugas : <?= $u['nama']; ?> ?');">Hapus</a>
+                                            </td>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -10,3 +10,12 @@ div.dataTables_wrapper div.dataTables_filter {
 table.dataTable {
     font-size: 10pt;
 }
+
+.sidebar-wrapper .sidebar-header img {
+    height: 5rem;
+}
+
+.sidebar-wrapper .sidebar-header {
+    font-size: 1rem;
+    font-weight: 700;
+}

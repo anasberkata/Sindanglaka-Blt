@@ -14,7 +14,7 @@ if (isset($_SESSION['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - SIPD Masyarakat Penerima BLT Desa</title>
+    <title>Login - SIDAMAR DESA SINDANGLAKA</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -31,8 +31,8 @@ if (isset($_SESSION['login'])) {
                     <div class="auth-logo">
                         <a href="index.html"><img src="assets/images/logo/lg.png" height="75px"></a>
                     </div>
-                    <h1 class="auth-title">Login</h1>
-                    <h6 class="mb-4">Sistem Informasi Data Masyarakat Penerima BLT Desa Sindanglaka</h6>
+                    <h1 class="auth-title">SIDAMAR</h1>
+                    <h6 class="mb-4">Sistem Informasi Data Masyarakat Penerima Bantuan Langsung Tunai Desa Sindanglaka</h6>
 
                     <?php if (isset($_GET["pesan"])) : ?>
                         <p class="alert alert-danger"><?= $_GET["pesan"]; ?></p>

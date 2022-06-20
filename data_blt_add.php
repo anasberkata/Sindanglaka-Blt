@@ -20,7 +20,7 @@ include "template_sidebar.php";
                 <h4>Data Penerima Bantuan Langsung Tunai</h4>
             </div>
             <div class="col-5">
-                <a href="logout.php" class="btn btn-success float-end">
+                <a href="logout.php" class="btn btn-success float-end" onclick="return confirm('Yakin akan keluar dari aplikasi?');">
                     <i class="icon dripicons-power"></i>
                     Logout
                 </a>
