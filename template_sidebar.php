@@ -66,6 +66,13 @@
                             </a>
                         </li>
 
+                        <li class="sidebar-item ">
+                            <a href="print_surat.php" class='sidebar-link'>
+                                <i class="bi bi-printer-fill"></i>
+                                <span>Print Surat BLT</span>
+                            </a>
+                        </li>
+
                         <li class="sidebar-title">Button</li>
 
                         <li class="sidebar-item  ">

@@ -49,28 +49,28 @@ include "template_sidebar.php";
                                     <div class="col-12 col-lg-6">
                                         <div class="row">
                                             <div class="col-12 col-md-4">
-                                                <label for="no_kk">Nomor KK</label>
+                                                <label class="col-form-label" for="no_kk">Nomor KK</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="no_kk" class="form-control" name="no_kk" required>
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="no_nik">NIK</label>
+                                                <label class="col-form-label" for="no_nik">NIK</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="no_nik" class="form-control" name="no_nik" required>
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="nama_lengkap">Nama Lengkap</label>
+                                                <label class="col-form-label" for="nama_lengkap">Nama Lengkap</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="nama_lengkap" class="form-control" name="nama_lengkap" required>
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="pekerjaan">Pekerjaan</label>
+                                                <label class="col-form-label" for="pekerjaan">Pekerjaan</label>
                                             </div>
                                             <fieldset class="col-12 col-md-8 form-group">
                                                 <select class="form-select" id="pekerjaan" name="pekerjaan">
@@ -81,7 +81,7 @@ include "template_sidebar.php";
                                             </fieldset>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="nama_ibu">Nama Ibu</label>
+                                                <label class="col-form-label" for="nama_ibu">Nama Ibu</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="nama_ibu" class="form-control" name="nama_ibu" required>
@@ -92,14 +92,14 @@ include "template_sidebar.php";
                                     <div class="col-12 col-lg-6">
                                         <div class="row">
                                             <div class="col-12 col-md-4">
-                                                <label for="jalan">Alamat</label>
+                                                <label class="col-form-label" for="jalan">Alamat</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="jalan" class="form-control" name="jalan" placeholder="Kampung / Nama Jalan" required>
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="rtrw">RT / RW</label>
+                                                <label class="col-form-label" for="rtrw">RT / RW</label>
                                             </div>
                                             <fieldset class="col-12 col-md-8 form-group">
                                                 <select class="form-select" id="rtrw" name="rtrw">
@@ -110,28 +110,35 @@ include "template_sidebar.php";
                                             </fieldset>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="desa">Desa</label>
+                                                <label class="col-form-label" for="desa">Desa</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="desa" class="form-control" name="desa" value="Sindanglaka" required readonly>
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="kecamatan">Kecamatan</label>
+                                                <label class="col-form-label" for="kecamatan">Kecamatan</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="kecamatan" class="form-control" name="kecamatan" value="Karangtengah" required readonly>
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label for="status_dtks">DTKS</label>
+                                                <label class="col-form-label" for="status_dtks">DTKS</label>
                                             </div>
                                             <fieldset class="col-12 col-md-8 form-group">
                                                 <select class="form-select" id="status_dtks" name="status_dtks">
-                                                    <option value="1">DTKS</option>
                                                     <option value="0">Non-DTKS</option>
+                                                    <option value="1">DTKS</option>
                                                 </select>
                                             </fieldset>
+
+                                            <div class="col-12 col-md-4">
+                                                <label class="col-form-label" for="periode">Periode</label>
+                                            </div>
+                                            <div class="col-12 col-md-8 form-group">
+                                                <input type="month" id="periode" class="form-control" name="periode" required>
+                                            </div>
                                         </div>
                                     </div>
 

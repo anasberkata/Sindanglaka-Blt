@@ -103,6 +103,17 @@ include "template_sidebar.php";
                                             </div>
                                         </div>
                                     </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-4">Periode</div>
+                                            <div class="col-8">: <?php
+                                                                    $periode = $blt["periode"];
+
+                                                                    echo formatPeriode($periode);
+                                                                    ?>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

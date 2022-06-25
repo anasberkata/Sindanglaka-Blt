@@ -15,6 +15,11 @@ function query($query)
     return $rows;
 }
 
+function formatPeriode($periode)
+{
+    // ubah string menjadi format tanggal
+    return date('F Y', strtotime($periode));
+}
 
 // RT RW
 function rtrw_add($data)
@@ -237,16 +242,15 @@ function blt_add($data)
     $kabupaten = "Cianjur";
     $provinsi = "Jawa Barat";
     $kode_pos = "43281";
-
-
     $status_dtks = $data["status_dtks"];
+    $periode = $data["periode"];
 
     $date_created = date("Y-m-d");
     $is_active = 1;
 
     $query = "INSERT INTO data_blt_penerima
 				VALUES
-			(NULL, '$nama_lengkap', '$no_kk', '$no_nik', '$jalan', '$rtrw', '$desa', '$kecamatan', '$kabupaten', '$provinsi', '$kode_pos', '$pekerjaan', '$nama_ibu', '$status_dtks', '$date_created', '$is_active')
+			(NULL, '$nama_lengkap', '$no_kk', '$no_nik', '$jalan', '$rtrw', '$desa', '$kecamatan', '$kabupaten', '$provinsi', '$kode_pos', '$pekerjaan', '$nama_ibu', '$status_dtks', '$periode', '$date_created', '$is_active')
 			";
 
     mysqli_query($conn, $query);

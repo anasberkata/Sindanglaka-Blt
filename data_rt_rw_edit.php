@@ -49,14 +49,14 @@ include "template_sidebar.php";
                                 <div class="row">
                                     <input type="hidden" value="<?= $rtrw["id_rtrw"] ?>" name="id">
                                     <div class="col-md-6">
-                                        <label for="rw">Rukun Warga</label>
+                                        <label class="col-form-label" for="rw">Rukun Warga</label>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <input type="text" id="rw" class="form-control" name="rw" value="<?= $rtrw["rukun_warga"] ?>">
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="rt">Rukun Tetangga</label>
+                                        <label class="col-form-label" for="rt">Rukun Tetangga</label>
                                     </div>
 
                                     <div class="col-md-6 form-group">

@@ -49,7 +49,7 @@ include "template_sidebar.php";
                                 <div class="row">
                                     <input type="hidden" value="<?= $sp["id_status_pekerjaan"] ?>" name="id">
                                     <div class="col-md-4 col-6">
-                                        <label for="nama_pekerjaan">Nama Pekerjaan</label>
+                                        <label class="col-form-label" for="nama_pekerjaan">Nama Pekerjaan</label>
                                     </div>
                                     <div class="col-md-8 col-6 form-group">
                                         <input type="text" id="nama_pekerjaan" class="form-control" name="nama_pekerjaan" value="<?= $sp["nama_pekerjaan"] ?>">

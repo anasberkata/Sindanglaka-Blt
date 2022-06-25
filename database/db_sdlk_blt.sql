@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 14, 2022 at 02:31 PM
+-- Generation Time: Jun 25, 2022 at 07:15 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -42,6 +42,7 @@ CREATE TABLE `data_blt_penerima` (
   `pekerjaan` varchar(255) NOT NULL,
   `nama_ibu` varchar(255) NOT NULL,
   `status_dtks` int(11) NOT NULL,
+  `periode` varchar(255) NOT NULL,
   `date_created` date NOT NULL,
   `is_active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -50,10 +51,13 @@ CREATE TABLE `data_blt_penerima` (
 -- Dumping data for table `data_blt_penerima`
 --
 
-INSERT INTO `data_blt_penerima` (`id_blt`, `nama_lengkap`, `no_kk`, `no_nik`, `jalan`, `rtrw`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `kode_pos`, `pekerjaan`, `nama_ibu`, `status_dtks`, `date_created`, `is_active`) VALUES
-(1, 'Rendi Dermawan', '3203060198982983', '320306018267736', 'Sindanglaka', '', '', '', '', '', '', 'Buruh', 'Iis', 1, '2022-06-14', 1),
-(2, 'Eka Nika', '321010101010', '321010101010', 'Pasantren', '01 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Pegawai Negeri Sipil', 'Aisyah', 0, '2022-06-14', 1),
-(3, 'Asep', '32019029389', '320199201019', 'Pasantren', '02 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Pegawai Negeri Sipil', 'Iis', 1, '2022-06-14', 1);
+INSERT INTO `data_blt_penerima` (`id_blt`, `nama_lengkap`, `no_kk`, `no_nik`, `jalan`, `rtrw`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `kode_pos`, `pekerjaan`, `nama_ibu`, `status_dtks`, `periode`, `date_created`, `is_active`) VALUES
+(1, 'Rendi Dermawan', '3203060198982983', '320306018267736', 'Sindanglaka', '01 / 01', '', '', '', '', '', 'Buruh', 'Iis', 1, '2022-01', '2022-06-14', 1),
+(2, 'Eka Nika', '321010101010', '321010101010', 'Pasantren', '01 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Pegawai Negeri Sipil', 'Aisyah', 0, '2022-01', '2022-06-14', 1),
+(3, 'Asep', '32019029389', '320199201019', 'Pasantren', '01 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Pegawai Negeri Sipil', 'Iis', 1, '2022-01', '2022-06-14', 1),
+(5, 'Yoyot', '32030671872872873', '32030665277188167', 'Rambutan', '02 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Belum/ Tidak Bekerja', 'Mimin', 0, '2022-02', '2022-06-25', 1),
+(6, 'Riana', '3202920320938', '3200937490837', 'Joglo', '01 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Pelajar / Mahasiswa', 'Ririn', 0, '2022-03', '2022-06-25', 1),
+(7, 'Nanang', '32039289328', '32309303098', 'jebrod', '01 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Mengurus Rumah Tangga', 'heni', 0, '2022-03', '2022-06-25', 1);
 
 -- --------------------------------------------------------
 
@@ -191,7 +195,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `data_blt_penerima`
 --
 ALTER TABLE `data_blt_penerima`
-  MODIFY `id_blt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_blt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `data_jabatan`

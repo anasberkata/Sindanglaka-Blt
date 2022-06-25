@@ -45,14 +45,14 @@ include "template_sidebar.php";
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="rw">Rukun Warga</label>
+                                        <label class="col-form-label" for="rw">Rukun Warga</label>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <input type="text" id="rw" class="form-control" name="rw" required>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="rt">Rukun Tetangga</label>
+                                        <label class="col-form-label" for="rt">Rukun Tetangga</label>
                                     </div>
 
                                     <div class="col-md-6 form-group">

@@ -45,7 +45,7 @@ include "template_sidebar.php";
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4 col-6">
-                                        <label for="nama_jabatan">Nama Jabatan</label>
+                                        <label class="col-form-label" for="nama_jabatan">Nama Jabatan</label>
                                     </div>
                                     <div class="col-md-8 col-6 form-group">
                                         <input type="text" id="nama_jabatan" class="form-control" name="nama_jabatan" required>
