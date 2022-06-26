@@ -60,13 +60,13 @@ include "template_sidebar.php";
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="stats-icon blue">
-                                            <i class="iconly-boldProfile"></i>
+                                        <div class="stats-icon red">
+                                            <i class="iconly-boldBookmark"></i>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Petugas</h6>
-                                        <h6 class="font-extrabold mb-0"><?= $total_petugas; ?> Petugas</h6>
+                                        <h6 class="text-muted font-semibold">Penerima BLT</h6>
+                                        <h6 class="font-extrabold mb-0"><?= $total_blt; ?> Orang</h6>
                                     </div>
                                 </div>
                             </div>
@@ -77,13 +77,13 @@ include "template_sidebar.php";
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="stats-icon red">
-                                            <i class="iconly-boldBookmark"></i>
+                                        <div class="stats-icon blue">
+                                            <i class="iconly-boldProfile"></i>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Penerima BLT</h6>
-                                        <h6 class="font-extrabold mb-0"><?= $total_blt; ?> Orang</h6>
+                                        <h6 class="text-muted font-semibold">Petugas</h6>
+                                        <h6 class="font-extrabold mb-0"><?= $total_petugas; ?> Petugas</h6>
                                     </div>
                                 </div>
                             </div>
