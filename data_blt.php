@@ -3,7 +3,7 @@ require "functions.php";
 
 // $blt = query("SELECT * FROM data_blt_penerima");
 
-if (!isset($_POST)) {
+if (!isset($_POST["search"])) {
     $blt = query("SELECT * FROM data_blt_penerima");
 } else {
     $nik = $_POST["nik"];

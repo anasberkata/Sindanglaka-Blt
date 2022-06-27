@@ -2,7 +2,7 @@
 require "functions.php";
 
 if (!isset($_POST["search"])) {
-    $blt = NULL;
+    $blt = [];
 } else {
     $rtrw = $_POST["rtrw"];
     $periode = $_POST["periode"];
