@@ -21,103 +21,6 @@ function formatPeriode($periode)
     return date('F Y', strtotime($periode));
 }
 
-// RT RW
-function rtrw_add($data)
-{
-    global $conn;
-
-    $rw = $data["rw"];
-    $rt = $data["rt"];
-
-    $date_created = date("Y-m-d");
-    $is_active = 1;
-
-    $query = "INSERT INTO data_rtrw
-				VALUES
-			(NULL, '$rw', '$rt', '$date_created', '$is_active')
-			";
-
-    mysqli_query($conn, $query);
-
-    return mysqli_affected_rows($conn);
-}
-
-function rtrw_edit($data)
-{
-    global $conn;
-
-    $id = $data["id"];
-    $rw = $data["rw"];
-    $rt = $data["rt"];
-
-    $query = "UPDATE data_rtrw SET
-			rukun_warga = '$rw',
-			rukun_tetangga = '$rt'
-
-            WHERE id_rtrw = $id
-			";
-
-    mysqli_query($conn, $query);
-
-    return mysqli_affected_rows($conn);
-}
-
-function rtrw_delete($id)
-{
-    global $conn;
-
-    mysqli_query($conn, "DELETE FROM data_rtrw WHERE id_rtrw = $id");
-    return mysqli_affected_rows($conn);
-}
-
-
-// STATUS PEKERJAAN
-function status_pekerjaan_add($data)
-{
-    global $conn;
-
-    $nama_pekerjaan = $data["nama_pekerjaan"];
-
-    $date_created = date("Y-m-d");
-    $is_active = 1;
-
-    $query = "INSERT INTO data_status_pekerjaan
-				VALUES
-			(NULL, '$nama_pekerjaan', '$date_created', '$is_active')
-			";
-
-    mysqli_query($conn, $query);
-
-    return mysqli_affected_rows($conn);
-}
-
-function status_pekerjaan_edit($data)
-{
-    global $conn;
-
-    $id = $data["id"];
-    $nama_pekerjaan = $data["nama_pekerjaan"];
-
-    $query = "UPDATE data_status_pekerjaan SET
-			nama_pekerjaan = '$nama_pekerjaan'
-
-            WHERE id_status_pekerjaan = $id
-			";
-
-    mysqli_query($conn, $query);
-
-    return mysqli_affected_rows($conn);
-}
-
-function status_pekerjaan_delete($id)
-{
-    global $conn;
-
-    mysqli_query($conn, "DELETE FROM data_status_pekerjaan WHERE id_status_pekerjaan = $id");
-    return mysqli_affected_rows($conn);
-}
-
-
 // JABATAN
 function jabatan_add($data)
 {
@@ -224,7 +127,7 @@ function petugas_delete($id)
 }
 
 
-// ------------------------------------------------------ BLT ------------------------------------------------------
+// ------------------------------------------------------ BLT ------------------------------------------------
 // BLT
 function blt_add($data)
 {
@@ -236,7 +139,9 @@ function blt_add($data)
     $pekerjaan = $data["pekerjaan"];
     $nama_ibu = $data["nama_ibu"];
     $jalan = $data["jalan"];
-    $rtrw = $data["rtrw"];
+    $rt = $data["rt"];
+    $rw = $data["rw"];
+    $rtrw = $rt . " / " . $rw;
     $desa = $data["desa"];
     $kecamatan = $data["kecamatan"];
     $kabupaten = "Cianjur";
@@ -269,7 +174,9 @@ function blt_edit($data)
     $pekerjaan = $data["pekerjaan"];
     $nama_ibu = $data["nama_ibu"];
     $jalan = $data["jalan"];
-    $rtrw = $data["rtrw"];
+    $rt = $data["rt"];
+    $rw = $data["rw"];
+    $rtrw = $rt . " / " . $rw;
     $desa = $data["desa"];
     $kecamatan = $data["kecamatan"];
     $kabupaten = "Cianjur";

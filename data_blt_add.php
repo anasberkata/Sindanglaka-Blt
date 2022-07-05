@@ -72,13 +72,9 @@ include "template_sidebar.php";
                                             <div class="col-12 col-md-4">
                                                 <label class="col-form-label" for="pekerjaan">Pekerjaan</label>
                                             </div>
-                                            <fieldset class="col-12 col-md-8 form-group">
-                                                <select class="form-select" id="pekerjaan" name="pekerjaan">
-                                                    <?php foreach ($status_pekerjaan as $sp) : ?>
-                                                        <option value="<?= $sp["nama_pekerjaan"]; ?>"><?= $sp["nama_pekerjaan"] ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </fieldset>
+                                            <div class="col-12 col-md-8 form-group">
+                                                <input type="text" id="pekerjaan" class="form-control" name="pekerjaan" required>
+                                            </div>
 
                                             <div class="col-12 col-md-4">
                                                 <label class="col-form-label" for="nama_ibu">Nama Ibu</label>
@@ -99,15 +95,18 @@ include "template_sidebar.php";
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label class="col-form-label" for="rtrw">RT / RW</label>
+                                                <label class="col-form-label" for="rt">RT</label>
                                             </div>
-                                            <fieldset class="col-12 col-md-8 form-group">
-                                                <select class="form-select" id="rtrw" name="rtrw">
-                                                    <?php foreach ($rtrw as $r) : ?>
-                                                        <option value="<?= $r["rukun_tetangga"] . ' / ' . $r["rukun_warga"]; ?>"><?= $r["rukun_tetangga"] ?> / <?= $r["rukun_warga"] ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </fieldset>
+                                            <div class="col-12 col-md-8 form-group">
+                                                <input type="text" id="rt" class="form-control" name="rt" placeholder="RT" required>
+                                            </div>
+
+                                            <div class="col-12 col-md-4">
+                                                <label class="col-form-label" for="rw">RW</label>
+                                            </div>
+                                            <div class="col-12 col-md-8 form-group">
+                                                <input type="text" id="rw" class="form-control" name="rw" placeholder="RW" required>
+                                            </div>
 
                                             <div class="col-12 col-md-4">
                                                 <label class="col-form-label" for="desa">Desa</label>

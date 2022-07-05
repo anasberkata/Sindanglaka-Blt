@@ -26,37 +26,6 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-title">Admin</li>
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span>Data Master</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="data_rt_rw.php">Data RT / RW</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="data_status_pekerjaan.php">Data Status Pekerjaan</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-people"></i>
-                                <span>Data Petugas</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="data_jabatan.php">Data Jabatan</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="data_petugas.php">Data Petugas</a>
-                                </li>
-                            </ul>
-                        </li>
-
                         <li class="sidebar-title">Data Bantuan</li>
 
                         <li class="sidebar-item ">
@@ -71,6 +40,23 @@
                                 <i class="bi bi-printer-fill"></i>
                                 <span>Print Surat BLT</span>
                             </a>
+                        </li>
+
+                        <li class="sidebar-title">Admin</li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-people"></i>
+                                <span>Data Petugas</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="data_jabatan.php">Data Jabatan</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="data_petugas.php">Data Petugas</a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="sidebar-title">Button</li>

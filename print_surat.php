@@ -4,12 +4,9 @@ require "functions.php";
 if (!isset($_POST["search"])) {
     $blt = [];
 } else {
-    $rtrw = $_POST["rtrw"];
     $periode = $_POST["periode"];
-    $blt = query("SELECT * FROM data_blt_penerima WHERE rtrw LIKE '$rtrw' AND periode LIKE '$periode'");
+    $blt = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'");
 }
-
-$rt = query("SELECT * FROM data_rtrw");
 
 include "template_header.php";
 include "template_sidebar.php";
@@ -43,31 +40,16 @@ include "template_sidebar.php";
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-12 mb-4">
+                            <div class="col-12 col-lg-4 mb-4">
                                 <h4>Cari Data</h4>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-11">
+                            <div class="col-12 col-lg-7">
                                 <form action="" method="post">
                                     <div class="form-group row align-items-center">
-                                        <div class="col-lg-1 col-4">
-                                            <label class="col-form-label mb-3" for="rtrw">RT/RW</label>
-                                        </div>
-                                        <div class="col-lg-4 col-8">
-                                            <fieldset form-group">
-                                                <select class="form-select mb-3" id="rtrw" name="rtrw">
-                                                    <?php foreach ($rt as $r) : ?>
-                                                        <option value="<?= $r["rukun_tetangga"] . ' / ' . $r["rukun_warga"]; ?>"><?= $r["rukun_tetangga"] ?> / <?= $r["rukun_warga"] ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </fieldset>
-                                        </div>
-
-                                        <div class="col-lg-1 col-4">
+                                        <div class="col-lg-3 col-4">
                                             <label class="col-form-label mb-3" for="periode">Periode</label>
                                         </div>
-                                        <div class="col-lg-4 col-8">
+                                        <div class="col-lg-7 col-8">
                                             <input type="month" class="form-control mb-3" id="periode" name="periode" value="<?= date('o-m'); ?>">
                                         </div>
 
@@ -78,14 +60,11 @@ include "template_sidebar.php";
                                 </form>
                             </div>
 
-                            <div class="col-lg-1">
+                            <div class="col-12 col-lg-1">
                                 <!-- <button type="submit" class="btn btn-success w-100 mb-3" name="print"><i class="icon dripicons-print"></i></button> -->
-                                <a href="print_surat_cetak.php?rtrw=<?= $rtrw; ?>&periode=<?= $periode; ?>" class="btn icon btn-success w-100 mb-3" target="_blank"><i class="bicon dripicons-print"></i></a>
+                                <a href="print_surat_cetak.php?periode=<?= $periode; ?>" class="btn icon btn-success w-100 mb-3" target="_blank"><i class="bicon dripicons-print"></i></a>
                             </div>
                         </div>
-
-
-
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
