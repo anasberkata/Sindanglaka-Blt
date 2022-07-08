@@ -38,24 +38,7 @@ include "template_sidebar.php";
         <section class="row">
             <div class="col-12 col-lg-12">
                 <div class="row">
-                    <div class="col-6 col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon purple">
-                                            <i class="iconly-boldShow"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">RT / RW</h6>
-                                        <h6 class="font-extrabold mb-0"><?= $total_rtrw; ?> RT / RW</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-4 col-md-6">
+                    <div class="col-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -72,7 +55,7 @@ include "template_sidebar.php";
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-lg-4 col-md-6">
+                    <div class="col-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
