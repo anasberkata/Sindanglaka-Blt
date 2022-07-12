@@ -1,11 +1,10 @@
 <?php
 require "functions.php";
-$rtrw = query("SELECT * FROM data_rtrw");
+
 $users = query("SELECT * FROM users");
 $blt = query("SELECT * FROM data_blt_penerima");
 $penerima_blt = query("SELECT * FROM data_blt_penerima ORDER BY id_blt DESC LIMIT 3");
 
-$total_rtrw = count($rtrw);
 $total_petugas = count($users);
 $total_blt = count($blt);
 
