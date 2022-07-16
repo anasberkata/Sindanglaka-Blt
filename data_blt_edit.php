@@ -1,5 +1,6 @@
 <?php
-require "functions.php";
+include "template_header.php";
+include "template_sidebar.php";
 
 $id = $_GET["id"];
 $blt = query("SELECT * FROM data_blt_penerima WHERE id_blt = $id")[0];
@@ -8,9 +9,6 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
 
 $tw = $blt["rtrw"];
 $pecahrtrw = explode(" ", $tw);
-
-include "template_header.php";
-include "template_sidebar.php";
 ?>
 
 <div id="main">

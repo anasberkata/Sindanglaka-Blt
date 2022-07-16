@@ -1,12 +1,10 @@
 <?php
-require "functions.php";
+include "template_header.php";
+include "template_sidebar.php";
 
 $id = $_GET["id"];
 $u = query("SELECT * FROM users JOIN data_jabatan ON users.jabatan = data_jabatan.id_jabatan WHERE id = $id")[0];
 $jabatan = query("SELECT * FROM data_jabatan");
-
-include "template_header.php";
-include "template_sidebar.php";
 ?>
 
 <div id="main">

@@ -1,10 +1,15 @@
 <?php
 session_start();
 
+require 'functions.php';
+
 if (!isset($_SESSION['login'])) {
     header("Location: index.php");
     exit;
 }
+
+$id_user = $_SESSION['id'];
+$user = query("SELECT * FROM users WHERE id = $id_user")[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">

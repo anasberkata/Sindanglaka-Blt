@@ -1,5 +1,6 @@
 <?php
-require "functions.php";
+include "template_header.php";
+include "template_sidebar.php";
 
 $users = query("SELECT * FROM users");
 $blt = query("SELECT * FROM data_blt_penerima");
@@ -7,9 +8,6 @@ $penerima_blt = query("SELECT * FROM data_blt_penerima ORDER BY id_blt DESC LIMI
 
 $total_petugas = count($users);
 $total_blt = count($blt);
-
-include "template_header.php";
-include "template_sidebar.php";
 ?>
 
 

@@ -1,10 +1,9 @@
 <?php
-require "functions.php";
-$rtrw = query("SELECT * FROM data_rtrw");
-$status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
-
 include "template_header.php";
 include "template_sidebar.php";
+
+$rtrw = query("SELECT * FROM data_rtrw");
+$status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
 ?>
 
 <div id="main">

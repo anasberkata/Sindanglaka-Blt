@@ -1,7 +1,7 @@
 <?php
 
 // KONEKSI DATABASE =====================================================
-$conn = mysqli_connect("localhost", "root", "", "db_sdlk_blt");
+$conn = mysqli_connect("localhost", "root", "", "db_sidamar");
 
 
 function query($query)

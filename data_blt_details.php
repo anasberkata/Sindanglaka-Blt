@@ -1,13 +1,11 @@
 <?php
-require "functions.php";
+include "template_header.php";
+include "template_sidebar.php";
 
 $id = $_GET["id"];
 $blt = query("SELECT * FROM data_blt_penerima WHERE id_blt = $id")[0];
 $rtrw = query("SELECT * FROM data_rtrw");
 $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
-
-include "template_header.php";
-include "template_sidebar.php";
 ?>
 
 <div id="main">

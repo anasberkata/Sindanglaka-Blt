@@ -42,24 +42,19 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-title">Admin</li>
+                        <?php if ($user["jabatan"] == 1) : ?>
+                            <li class="sidebar-title">Admin</li>
 
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-people"></i>
-                                <span>Data Petugas</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="data_jabatan.php">Data Jabatan</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="data_petugas.php">Data Petugas</a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="sidebar-item ">
+                                <a href="data_petugas.php" class='sidebar-link'>
+                                    <i class="bi bi-people"></i>
+                                    <span>Data Petugas</span>
+                                </a>
+                            </li>
+                        <?php else : ?>
+                        <?php endif; ?>
 
-                        <li class="sidebar-title">Button</li>
+                        <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
                             <a href="logout.php" class='sidebar-link' onclick="return confirm('Yakin akan keluar dari aplikasi?');">

@@ -1,5 +1,6 @@
 <?php
-require "functions.php";
+include "template_header.php";
+include "template_sidebar.php";
 
 if (!isset($_POST["search"])) {
     $blt = [];
@@ -7,10 +8,6 @@ if (!isset($_POST["search"])) {
     $periode = $_POST["periode"];
     $blt = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'");
 }
-
-include "template_header.php";
-include "template_sidebar.php";
-
 ?>
 
 <div id="main">

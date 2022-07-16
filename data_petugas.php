@@ -1,9 +1,8 @@
 <?php
-require "functions.php";
-$users = query("SELECT * FROM users JOIN data_jabatan ON users.jabatan = data_jabatan.id_jabatan");
-
 include "template_header.php";
 include "template_sidebar.php";
+
+$users = query("SELECT * FROM users JOIN data_jabatan ON users.jabatan = data_jabatan.id_jabatan");
 ?>
 
 <div id="main">

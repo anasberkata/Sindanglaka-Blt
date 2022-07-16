@@ -1,5 +1,6 @@
 <?php
-require "functions.php";
+include "template_header.php";
+include "template_sidebar.php";
 
 // $blt = query("SELECT * FROM data_blt_penerima");
 
@@ -9,10 +10,6 @@ if (!isset($_POST["search"])) {
     $nik = $_POST["nik"];
     $blt = query("SELECT * FROM data_blt_penerima WHERE no_nik LIKE '%$nik%'");
 }
-
-include "template_header.php";
-include "template_sidebar.php";
-
 ?>
 
 <div id="main">

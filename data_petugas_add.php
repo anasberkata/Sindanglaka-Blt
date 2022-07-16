@@ -1,9 +1,8 @@
 <?php
-require "functions.php";
-$jabatan = query("SELECT * FROM data_jabatan");
-
 include "template_header.php";
 include "template_sidebar.php";
+
+$jabatan = query("SELECT * FROM data_jabatan");
 ?>
 
 <div id="main">
