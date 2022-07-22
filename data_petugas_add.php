@@ -103,16 +103,25 @@ $jabatan = query("SELECT * FROM data_jabatan");
     // Tambah RT RW
     if (isset($_POST["petugas_add"])) {
 
-        // cek apakah data berhasil di tambahkan atau tidak
-        if (petugas_add($_POST) > 0) {
+        $email = $_POST["email"];
+
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "<script>
-                alert('Data berhasil ditambahkan');
-                document.location.href= 'data_petugas.php';
+                alert('Email sudah terdaftar! Gunakan email lain!');
+                document.location.href= 'data_petugas_add.php';
             </script>";
         } else {
-            echo "<script>
-                alert('Data gagal ditambahkan');
-            </script>";
+            // cek apakah data berhasil di tambahkan atau tidak
+            if (petugas_add($_POST) > 0) {
+                echo "<script>
+                    alert('Data berhasil ditambahkan');
+                    document.location.href= 'data_petugas.php';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('Data gagal ditambahkan');
+                </script>";
+            }
         }
     }
     ?>
