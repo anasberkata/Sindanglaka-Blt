@@ -40,7 +40,7 @@ if (!isset($_POST["search"])) {
                             <div class="col-12 col-lg-4 mb-4">
                                 <h4>Cari Data</h4>
                             </div>
-                            <div class="col-12 col-lg-7">
+                            <div class="col-12 col-lg-6">
                                 <form action="" method="post">
                                     <div class="form-group row align-items-center">
                                         <div class="col-lg-3 col-4">
@@ -57,9 +57,12 @@ if (!isset($_POST["search"])) {
                                 </form>
                             </div>
 
-                            <div class="col-12 col-lg-1">
-                                <!-- <button type="submit" class="btn btn-success w-100 mb-3" name="print"><i class="icon dripicons-print"></i></button> -->
-                                <a href="print_surat_cetak.php?periode=<?= $periode; ?>" class="btn icon btn-success w-100 mb-3" target="_blank"><i class="bicon dripicons-print"></i></a>
+                            <div class="col-12 col-lg-2">
+
+                                <div class="btn-group w-100" role="group" aria-label="Basic example">
+                                    <a href="print_surat_cetak.php?periode=<?= $periode; ?>" class="btn icon btn-success w-100 mb-3" target="_blank"><i class="bicon dripicons-print"></i></a>
+                                    <a href="print_surat_download.php?periode=<?= $periode; ?>" class="btn icon btn-info w-100 mb-3" target="_blank"><i class="bicon dripicons-download"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
