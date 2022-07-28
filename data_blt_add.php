@@ -154,19 +154,30 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
     <?php
     include "template_footer.php";
 
+
+
     // Tambah RT RW
     if (isset($_POST["blt_add"])) {
+        $no_nik = $_POST["no_nik"];
+        $cek_nik = query("SELECT * FROM data_blt_penerima WHERE no_nik = '$no_nik'");
 
-        // cek apakah data berhasil di tambahkan atau tidak
-        if (blt_add($_POST) > 0) {
+        if ($cek_nik > 0) {
             echo "<script>
+                alert('NIK sudah terdaftar!');
+                document.location.href= 'data_blt_add.php';
+            </script>";
+        } else {
+            // cek apakah data berhasil di tambahkan atau tidak
+            if (blt_add($_POST) > 0) {
+                echo "<script>
                 alert('Data berhasil ditambahkan');
                 document.location.href= 'data_blt.php';
             </script>";
-        } else {
-            echo "<script>
+            } else {
+                echo "<script>
                 alert('Data gagal ditambahkan');
             </script>";
+            }
         }
     }
     ?>
