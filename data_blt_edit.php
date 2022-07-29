@@ -87,6 +87,24 @@ $pecahrtrw = explode(" ", $tw);
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="nama_ibu" class="form-control" name="nama_ibu" value="<?= $blt["nama_ibu"]; ?>">
                                             </div>
+
+                                            <div class="col-12 col-md-4">
+                                                <label class="col-form-label" for="status_dtks">DTKS</label>
+                                            </div>
+                                            <fieldset class="col-12 col-md-8 form-group">
+                                                <select class="form-select" id="status_dtks" name="status_dtks">
+                                                    <option value="<?= $blt["status_dtks"]; ?>"><?php
+                                                                                                if ($blt["status_dtks"] == 1) {
+                                                                                                    echo "DTKS";
+                                                                                                } else {
+                                                                                                    echo "Non-DTKS";
+                                                                                                }
+                                                                                                ?></option>
+                                                    <option value="1">DTKS</option>
+                                                    <option value="0">Non-DTKS</option>
+
+                                                </select>
+                                            </fieldset>
                                         </div>
                                     </div>
 
@@ -128,28 +146,17 @@ $pecahrtrw = explode(" ", $tw);
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label class="col-form-label" for="status_dtks">DTKS</label>
-                                            </div>
-                                            <fieldset class="col-12 col-md-8 form-group">
-                                                <select class="form-select" id="status_dtks" name="status_dtks">
-                                                    <option value="<?= $blt["status_dtks"]; ?>"><?php
-                                                                                                if ($blt["status_dtks"] == 1) {
-                                                                                                    echo "DTKS";
-                                                                                                } else {
-                                                                                                    echo "Non-DTKS";
-                                                                                                }
-                                                                                                ?></option>
-                                                    <option value="1">DTKS</option>
-                                                    <option value="0">Non-DTKS</option>
-
-                                                </select>
-                                            </fieldset>
-
-                                            <div class="col-12 col-md-4">
                                                 <label class="col-form-label" for="periode">Periode</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="month" id="periode" class="form-control" name="periode" value="<?= $blt["periode"]; ?>">
+                                            </div>
+
+                                            <div class="col-12 col-md-4">
+                                                <label class="col-form-label" for="sampai">Sampai</label>
+                                            </div>
+                                            <div class="col-12 col-md-8 form-group">
+                                                <input type="month" id="sampai" class="form-control" name="sampai" value="<?= $blt["sampai"]; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -168,10 +175,8 @@ $pecahrtrw = explode(" ", $tw);
     <?php
     include "template_footer.php";
 
-    // Tambah RT RW
     if (isset($_POST["blt_edit"])) {
 
-        // cek apakah data berhasil di tambahkan atau tidak
         if (blt_edit($_POST) > 0) {
             echo "<script>
                 alert('Data berhasil diubah');

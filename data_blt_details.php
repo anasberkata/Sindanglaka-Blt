@@ -108,7 +108,11 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
                                                                     $periode = $blt["periode"];
 
                                                                     echo formatPeriode($periode);
-                                                                    ?>
+                                                                    ?> s.d <?php
+                                                                            $sampai = $blt["sampai"];
+
+                                                                            echo formatPeriode($sampai);
+                                                                            ?>
                                             </div>
                                         </div>
                                     </li>
@@ -123,10 +127,8 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
     <?php
     include "template_footer.php";
 
-    // Tambah RT RW
     if (isset($_POST["blt_edit"])) {
 
-        // cek apakah data berhasil di tambahkan atau tidak
         if (blt_edit($_POST) > 0) {
             echo "<script>
                 alert('Data berhasil diubah');

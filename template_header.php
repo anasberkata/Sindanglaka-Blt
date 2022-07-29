@@ -44,7 +44,9 @@ $user = query("SELECT * FROM users WHERE id = $id_user")[0];
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/my-style.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="shortcut icon" href="assets/images/logo/lg.png" type="image/x-icon">
+
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/logodesa.png">
+    <!-- <link rel="shortcut icon" href="assets/images/logo/lg.png" type="image/x-icon"> -->
 </head>
 
 <body>

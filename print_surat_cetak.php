@@ -5,13 +5,9 @@ require_once 'vendor/autoload.php';
 require 'functions.php';
 
 $periode = $_GET["periode"];
+$sampai = $_GET["sampai"];
 
-// $blt1 = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'")[0];
-// $blt2 = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'")[1];
-// $blt3 = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'")[2];
-$blt = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'");
-
-// $i = 1;
+$blt = query("SELECT * FROM data_blt_penerima WHERE periode = '$periode' AND sampai = '$sampai'");
 
 $html = '
     <body style="font-size: 10pt; font-family: Arial, Helvetica, sans-serif; color: #000000;">
@@ -22,7 +18,7 @@ $html = '
         DESA SINDANGLAKA KECAMATAN KARANGTENGAH
         <br>
         KABUPATEN CIANJUR
-        PERIODE ' . date('F Y', strtotime($periode)) . '
+        PERIODE ' . date('F Y', strtotime($periode)) . ' S.D ' . date('F Y', strtotime($sampai)) . '
         </h4>
         <table style="border: 1px solid #000;">
             <tr style="border: 1px solid #000; background-color:gray;">

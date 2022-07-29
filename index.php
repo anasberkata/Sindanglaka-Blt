@@ -7,7 +7,6 @@ if (isset($_SESSION['login'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +19,8 @@ if (isset($_SESSION['login'])) {
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/pages/auth.css">
+
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/logodesa.png">
 </head>
 
 <body>

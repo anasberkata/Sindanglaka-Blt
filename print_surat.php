@@ -6,7 +6,8 @@ if (!isset($_POST["search"])) {
     $blt = [];
 } else {
     $periode = $_POST["periode"];
-    $blt = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'");
+    $sampai = $_POST["sampai"];
+    $blt = query("SELECT * FROM data_blt_penerima WHERE periode = '$periode' AND sampai = '$sampai'");
 }
 ?>
 
@@ -37,17 +38,25 @@ if (!isset($_POST["search"])) {
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-12 col-lg-4 mb-4">
+                            <div class="col-12 col-lg-12 mb-4">
                                 <h4>Cari Data</h4>
                             </div>
-                            <div class="col-12 col-lg-6">
+
+                            <div class="col-12 col-lg-10">
                                 <form action="" method="post">
                                     <div class="form-group row align-items-center">
-                                        <div class="col-lg-3 col-4">
+                                        <div class="col-lg-2 col-4">
                                             <label class="col-form-label mb-3" for="periode">Periode</label>
                                         </div>
-                                        <div class="col-lg-7 col-8">
+                                        <div class="col-lg-3 col-8">
                                             <input type="month" class="form-control mb-3" id="periode" name="periode" value="<?= date('o-m'); ?>">
+                                        </div>
+
+                                        <div class="col-lg-2 col-4">
+                                            <label class="col-form-label mb-3" for="sampai">Sampai</label>
+                                        </div>
+                                        <div class="col-lg-3 col-8">
+                                            <input type="month" class="form-control mb-3" id="sampai" name="sampai" value="<?= date('o-m'); ?>">
                                         </div>
 
                                         <div class="col-lg-2 col-12">
@@ -58,10 +67,9 @@ if (!isset($_POST["search"])) {
                             </div>
 
                             <div class="col-12 col-lg-2">
-
                                 <div class="btn-group w-100" role="group" aria-label="Basic example">
-                                    <a href="print_surat_cetak.php?periode=<?= $periode; ?>" class="btn icon btn-success w-100 mb-3" target="_blank"><i class="bicon dripicons-print"></i></a>
-                                    <a href="print_surat_download.php?periode=<?= $periode; ?>" class="btn icon btn-info w-100 mb-3" target="_blank"><i class="bicon dripicons-download"></i></a>
+                                    <a href="print_surat_cetak.php?periode=<?= $periode; ?>&sampai=<?= $sampai; ?>" class="btn icon btn-success w-100 mb-3" target="_blank"><i class="bicon dripicons-print"></i></a>
+                                    <a href="print_surat_download.php?periode=<?= $periode; ?>&sampai=<?= $sampai; ?>" class="btn icon btn-info w-100 mb-3" target="_blank"><i class="bicon dripicons-download"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +113,11 @@ if (!isset($_POST["search"])) {
                                                 $periode = $b["periode"];
 
                                                 echo formatPeriode($periode);
-                                                ?>
+                                                ?> <br> s.d <br> <?php
+                                                                    $sampai = $b["sampai"];
+
+                                                                    echo formatPeriode($sampai);
+                                                                    ?>
                                             </td>
 
                                             <!-- <td>

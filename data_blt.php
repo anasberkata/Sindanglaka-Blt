@@ -54,7 +54,7 @@ if (!isset($_POST["search"])) {
                                             <input type="text" class="form-control" name="nik" id="nik" placeholder="Cari data berdasarkan NIK">
                                         </div>
                                         <div class="col-2">
-                                            <button type="submit" class="btn btn-primary w-100" name="submit"><i class="icon dripicons-search"></i></button>
+                                            <button type="submit" class="btn btn-primary w-100" name="search"><i class="icon dripicons-search"></i></button>
                                         </div>
                                     </div>
                                 </form>

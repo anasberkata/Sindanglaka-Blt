@@ -149,16 +149,25 @@ function blt_add($data)
     $kode_pos = "43281";
     $status_dtks = $data["status_dtks"];
     $periode = $data["periode"];
+    $sampai = $data["sampai"];
 
     $date_created = date("Y-m-d");
     $is_active = 1;
 
-    $query = "INSERT INTO data_blt_penerima
+    $cek_nik = mysqli_query($conn, "SELECT * FROM data_blt_penerima WHERE no_nik = '$no_nik'");
+    if ($cek_nik->num_rows > 0) {
+        echo "<script>
+                alert('NIK sudah terdaftar!');
+                document.location.href= 'data_blt_add.php';
+            </script>";
+    } else {
+        $query = "INSERT INTO data_blt_penerima
 				VALUES
-			(NULL, '$nama_lengkap', '$no_kk', '$no_nik', '$jalan', '$rtrw', '$desa', '$kecamatan', '$kabupaten', '$provinsi', '$kode_pos', '$pekerjaan', '$nama_ibu', '$status_dtks', '$periode', '$date_created', '$is_active')
+			(NULL, '$nama_lengkap', '$no_kk', '$no_nik', '$jalan', '$rtrw', '$desa', '$kecamatan', '$kabupaten', '$provinsi', '$kode_pos', '$pekerjaan', '$nama_ibu', '$status_dtks', '$periode', '$sampai', '$date_created', '$is_active')
 			";
 
-    mysqli_query($conn, $query);
+        mysqli_query($conn, $query);
+    }
 
     return mysqli_affected_rows($conn);
 }
@@ -183,6 +192,8 @@ function blt_edit($data)
     $provinsi = "Jawa Barat";
     $kode_pos = "43281";
     $status_dtks = $data["status_dtks"];
+    $periode = $data["periode"];
+    $sampai = $data["sampai"];
 
     $query = "UPDATE data_blt_penerima SET
 			nama_lengkap = '$nama_lengkap',
@@ -197,7 +208,9 @@ function blt_edit($data)
 			kode_pos = '$kode_pos',
 			pekerjaan = '$pekerjaan',
 			nama_ibu = '$nama_ibu',
-			status_dtks = '$status_dtks'
+			status_dtks = '$status_dtks',
+			periode = '$periode',
+			sampai = '$sampai'
 
             WHERE id_blt = $id
 			";

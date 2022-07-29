@@ -104,10 +104,8 @@ $jabatan = query("SELECT * FROM data_jabatan");
     <?php
     include "template_footer.php";
 
-    // Tambah RT RW
     if (isset($_POST["petugas_edit"])) {
 
-        // cek apakah data berhasil di tambahkan atau tidak
         if (petugas_edit($_POST) > 0) {
             echo "<script>
                 alert('Data Berhasil diubah');

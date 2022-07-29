@@ -2,7 +2,9 @@
 require 'functions.php';
 
 $periode = $_GET["periode"];
-$blt = query("SELECT * FROM data_blt_penerima WHERE periode LIKE '$periode'");
+$sampai = $_GET["sampai"];
+
+$blt = query("SELECT * FROM data_blt_penerima WHERE periode = '$periode' AND sampai = '$sampai'");
 
 header("Content-type: application/vnd-ms-excel");
 header("Content-Disposition: attachment; filename=Data Penerima BLT Periode $periode.xls");
@@ -26,7 +28,7 @@ header("Content-Disposition: attachment; filename=Data Penerima BLT Periode $per
         DESA SINDANGLAKA KECAMATAN KARANGTENGAH
         <br>
         KABUPATEN CIANJUR
-        PERIODE <span style="text-transform: uppercase;"><?= date('F Y', strtotime($periode)) ?></span>
+        PERIODE <span style="text-transform: uppercase;"><?= date('F Y', strtotime($periode)) ?> S.D <?= date('F Y', strtotime($sampai)) ?></span>
     </h4>
     <table>
         <tr style="border: 1px solid #000; background-color:gray; height: 50px; color: #fff; vertical-align: middle;">

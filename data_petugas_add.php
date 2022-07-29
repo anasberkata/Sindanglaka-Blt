@@ -100,7 +100,6 @@ $jabatan = query("SELECT * FROM data_jabatan");
     <?php
     include "template_footer.php";
 
-    // Tambah RT RW
     if (isset($_POST["petugas_add"])) {
 
         $email = $_POST["email"];

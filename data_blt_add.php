@@ -81,6 +81,16 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="text" id="nama_ibu" class="form-control" name="nama_ibu" required>
                                             </div>
+
+                                            <div class="col-12 col-md-4">
+                                                <label class="col-form-label" for="status_dtks">DTKS</label>
+                                            </div>
+                                            <fieldset class="col-12 col-md-8 form-group">
+                                                <select class="form-select" id="status_dtks" name="status_dtks">
+                                                    <option value="0">Non-DTKS</option>
+                                                    <option value="1">DTKS</option>
+                                                </select>
+                                            </fieldset>
                                         </div>
                                     </div>
 
@@ -122,20 +132,17 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
                                             </div>
 
                                             <div class="col-12 col-md-4">
-                                                <label class="col-form-label" for="status_dtks">DTKS</label>
-                                            </div>
-                                            <fieldset class="col-12 col-md-8 form-group">
-                                                <select class="form-select" id="status_dtks" name="status_dtks">
-                                                    <option value="0">Non-DTKS</option>
-                                                    <option value="1">DTKS</option>
-                                                </select>
-                                            </fieldset>
-
-                                            <div class="col-12 col-md-4">
                                                 <label class="col-form-label" for="periode">Periode</label>
                                             </div>
                                             <div class="col-12 col-md-8 form-group">
                                                 <input type="month" id="periode" class="form-control" name="periode" required>
+                                            </div>
+
+                                            <div class="col-12 col-md-4">
+                                                <label class="col-form-label" for="sampai">Sampai</label>
+                                            </div>
+                                            <div class="col-12 col-md-8 form-group">
+                                                <input type="month" id="sampai" class="form-control" name="sampai" required>
                                             </div>
                                         </div>
                                     </div>
@@ -154,30 +161,18 @@ $status_pekerjaan = query("SELECT * FROM data_status_pekerjaan");
     <?php
     include "template_footer.php";
 
-
-
-    // Tambah RT RW
     if (isset($_POST["blt_add"])) {
-        $no_nik = $_POST["no_nik"];
-        $cek_nik = query("SELECT * FROM data_blt_penerima WHERE no_nik = '$no_nik'");
 
-        if ($cek_nik > 0) {
+        if (blt_add($_POST) > 0) {
             echo "<script>
-                alert('NIK sudah terdaftar!');
-                document.location.href= 'data_blt_add.php';
-            </script>";
-        } else {
-            // cek apakah data berhasil di tambahkan atau tidak
-            if (blt_add($_POST) > 0) {
-                echo "<script>
                 alert('Data berhasil ditambahkan');
                 document.location.href= 'data_blt.php';
             </script>";
-            } else {
-                echo "<script>
+        } else {
+            echo "<script>
                 alert('Data gagal ditambahkan');
             </script>";
-            }
         }
     }
+
     ?>

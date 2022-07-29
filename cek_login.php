@@ -23,13 +23,11 @@ if ($cek > 0) {
 		$_SESSION['id'] = $data['id'];
 
 		header("location: dashboard.php");
-
 	} else if ($data['jabatan'] == 2) {
 		$_SESSION['login'] = true;
 		$_SESSION['id'] = $data['id'];
 
 		header("location: dashboard.php");
-
 	} else {
 		header("location: index.php?pesan=gagal");
 	}
