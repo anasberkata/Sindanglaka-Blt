@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2022 at 04:00 PM
+-- Generation Time: Jul 30, 2022 at 08:14 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -57,7 +57,8 @@ INSERT INTO `data_blt_penerima` (`id_blt`, `nama_lengkap`, `no_kk`, `no_nik`, `j
 (2, 'Eka Nika', '321010101010', '321010101010', 'Pasantren', '01 / 01', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Pegawai Negeri Sipil', 'Aisyah', 0, '2022-01', '2022-12', '2022-06-14', 1),
 (11, 'Eka Anas Jatnika', '12345', '3203061502920012', 'Cendana', '002 / 009', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Desainer Grafis', 'Aisyah', 1, '2022-01', '2022-07', '2022-07-29', 1),
 (12, 'Azka Siti Muzakiyah', '3203061502920012', '3203074312960010', 'Sindanglaka', '002 / 009', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Ibu Rumah tangga', 'Ai', 0, '2022-01', '2022-07', '2022-07-29', 1),
-(14, 'Mukidin', '1234567890', '1234567890', 'asd', '009 / 009', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'asd', 'sad', 1, '2022-01', '2022-04', '2022-07-29', 1);
+(14, 'Mukidin', '1234567890', '1234567890', 'asd', '009 / 009', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'asd', 'sad', 1, '2022-01', '2022-04', '2022-07-29', 1),
+(15, 'Abudin', '3203061212200002', '3203061212200002', 'Jebrew', '002 / 009', 'Sindanglaka', 'Karangtengah', 'Cianjur', 'Jawa Barat', '43281', 'Guru', 'Iis', 0, '2022-01', '2022-12', '2022-07-30', 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +152,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nama`, `email`, `username`, `password`, `jabatan`, `date_created`, `is_active`) VALUES
 (1, 'Azka Siti Muzakiyah', 'azkasitimuzakiyah@gmail.com', 'admin', 'admin', 1, '2022-05-11', 1),
-(2, 'Kasi Kesejahteraan', 'kasi01@gmail.com', 'kasi01', '12345', 2, '2022-05-11', 1);
+(2, 'Kasi Kesejahteraan', 'kasi01@gmail.com', 'kasi01', '12345', 2, '2022-05-11', 1),
+(10, 'Eka Anas Jatnika', 'ideanasdesain@gmail.com', 'anasberkata', 'Dean114119', 1, '2022-07-30', 1);
 
 --
 -- Indexes for dumped tables
@@ -195,7 +197,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `data_blt_penerima`
 --
 ALTER TABLE `data_blt_penerima`
-  MODIFY `id_blt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_blt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `data_jabatan`
@@ -219,7 +221,7 @@ ALTER TABLE `data_status_pekerjaan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
